@@ -17,9 +17,9 @@ router.get('/:id',
 
 router.post(
     '/',    
-    body('name')
+    body('nombre')
         .notEmpty().withMessage("Name is required"),
-    body('price')
+    body('precio')
         .isNumeric().withMessage("Valor no valido")
         .notEmpty().withMessage("El precio del producto no puede ir vacio")
         .custom(value => value > 0 ).withMessage("El precio no valido"),  
@@ -29,13 +29,13 @@ router.post(
 
 router.put('/:id', 
     param('id').isInt().withMessage("El id debe ser un numero entero"),
-    body('name')
+    body('nombre')
         .notEmpty().withMessage("El nombre no puede ir vacio"),
-    body('price')
+    body('precio')
         .isNumeric().withMessage("Valor no valido")
         .notEmpty().withMessage("El precio del producto no puede ir vacio")
         .custom(value => value > 0 ).withMessage("El precio no valido"),
-    body('disponibility')
+    body('disponibilidad')
         .isBoolean().withMessage("El valor de disponibilidad no es valido"),
     handleInputerrors,
     updateProduct
