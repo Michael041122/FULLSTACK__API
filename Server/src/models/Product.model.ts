@@ -13,7 +13,7 @@ class Product extends Model {
     nombre: string;
 
     @Column({
-        type: DataType.FLOAT(5.2),      
+        type: DataType.FLOAT(50),      
     })
     precio: number ;
 
